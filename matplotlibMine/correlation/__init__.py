@@ -21,9 +21,6 @@ params = {
 plt.rcParams.update(params)
 plt.style.use('seaborn-whitegrid')
 sns.set_style("white")
-d = pandas.read_csv("https://github.com/selva86/datasets/blob/master/mpg_ggplot2.csv")
-data = d.groupby(["hwy", "cty"]).size().reset_index(name="counts")
-print(data)
 print(mpl.__version__)
 print(sns.__version__)
 '''

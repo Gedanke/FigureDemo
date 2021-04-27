@@ -3,14 +3,14 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="/dataset/midwest_filter.csv">
+        <entry key="/matplotlibMine/dataset/iris_test.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
-        <entry key="/matplotlibMine/dataset/mpg_ggplot2.csv">
+        <entry key="/matplotlibMine/dataset/mtcars.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

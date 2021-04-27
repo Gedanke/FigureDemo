@@ -4,7 +4,7 @@ import numpy
 import pandas
 import matplotlib.pyplot as plt
 
-data = pandas.read_csv("dataset/midwest_filter.csv")
+data = pandas.read_csv("../dataset/midwest_filter.csv")
 categories = numpy.unique(data["category"])
 num = len(categories)
 colors = [
@@ -25,5 +25,5 @@ plt.xticks(fontsize=12)
 plt.yticks(fontsize=12)
 plt.title("Scatterplot of Midwest Area vs Population", fontsize=22)
 plt.legend(fontsize=12)
-plt.savefig("photos/scatterPlot.png")
+plt.savefig("../photos/correlation/scatterPlot.png")
 plt.show()
