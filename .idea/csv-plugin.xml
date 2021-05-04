@@ -3,6 +3,27 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="/matplotlibMine/dataset/AirPassengers.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/matplotlibMine/dataset/USArrests.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/matplotlibMine/dataset/diamonds_filter.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/matplotlibMine/dataset/economics.csv">
           <value>
             <Attribute>
@@ -38,6 +59,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/matplotlibMine/dataset/mortality.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/matplotlibMine/dataset/mpg_ggplot2.csv">
           <value>
             <Attribute>
@@ -46,6 +74,20 @@
           </value>
         </entry>
         <entry key="/matplotlibMine/dataset/mtcars.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/matplotlibMine/dataset/nightvisitors.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/matplotlibMine/dataset/orders_45d.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

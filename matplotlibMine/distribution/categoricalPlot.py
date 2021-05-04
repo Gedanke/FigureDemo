@@ -8,8 +8,8 @@ import seaborn as sns
 import joypy
 
 # Load Dataset
-titanic = sns.load_dataset("titanic")
-# titanic = pandas.read_csv("../dataset/titanic.csv")
+# titanic = sns.load_dataset("titanic")
+titanic = pandas.read_csv("../dataset/titanic.csv")
 # Plot
 g = sns.catplot(x="alive",
                 col="deck",
