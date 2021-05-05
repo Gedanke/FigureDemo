@@ -1,10 +1,7 @@
 # -*- coding:utf-8 -*-
 
-import numpy
 import pandas
-import matplotlib as mpl
 import matplotlib.pyplot as plt
-import seaborn as sns
 
 df = pandas.read_csv("../dataset/mtcars.csv")
 x = df.loc[:, ['mpg']]
@@ -15,12 +12,14 @@ df.reset_index(inplace=True)
 
 # Draw plot
 plt.figure(figsize=(10, 6), dpi=80)
-plt.hlines(y=df.index,
-           xmin=0,
-           xmax=df.mpg_z,
-           color=df.colors,
-           alpha=0.8,
-           linewidth=5)
+plt.hlines(
+    y=df.index,
+    xmin=0,
+    xmax=df.mpg_z,
+    color=df.colors,
+    alpha=0.8,
+    linewidth=5
+)
 
 # Decorations
 plt.gca().set(ylabel='$Model', xlabel='$Mileage')

@@ -1,10 +1,7 @@
 # -*- coding:utf-8 -*-
 
-import numpy
 import pandas
-import matplotlib as mpl
 import matplotlib.pyplot as plt
-import seaborn as sns
 import matplotlib.lines as mlines
 
 # Import Data
@@ -22,37 +19,47 @@ def newline(p1, p2, color='black'):
 
 
 # Figure and Axes
-fig, ax = plt.subplots(1, 1, figsize=(10, 8), facecolor='#f8f2e4', dpi=80)
+fig, ax = plt.subplots(
+    1, 1, figsize=(10, 8), facecolor='#f8f2e4', dpi=80
+)
 
 # Vertical Lines
-ax.vlines(x=.05,
-          ymin=0,
-          ymax=26,
-          color='black',
-          alpha=1,
-          linewidth=1,
-          linestyles='dotted')
-ax.vlines(x=.10,
-          ymin=0,
-          ymax=26,
-          color='black',
-          alpha=1,
-          linewidth=1,
-          linestyles='dotted')
-ax.vlines(x=.15,
-          ymin=0,
-          ymax=26,
-          color='black',
-          alpha=1,
-          linewidth=1,
-          linestyles='dotted')
-ax.vlines(x=.20,
-          ymin=0,
-          ymax=26,
-          color='black',
-          alpha=1,
-          linewidth=1,
-          linestyles='dotted')
+ax.vlines(
+    x=.05,
+    ymin=0,
+    ymax=26,
+    color='black',
+    alpha=1,
+    linewidth=1,
+    linestyles='dotted'
+)
+ax.vlines(
+    x=.10,
+    ymin=0,
+    ymax=26,
+    color='black',
+    alpha=1,
+    linewidth=1,
+    linestyles='dotted'
+)
+ax.vlines(
+    x=.15,
+    ymin=0,
+    ymax=26,
+    color='black',
+    alpha=1,
+    linewidth=1,
+    linestyles='dotted'
+)
+ax.vlines(
+    x=.20,
+    ymin=0,
+    ymax=26,
+    color='black',
+    alpha=1,
+    linewidth=1,
+    linestyles='dotted'
+)
 
 # Points
 ax.scatter(y=df['index'], x=df['pct_2013'], s=50, color='#dc2624')

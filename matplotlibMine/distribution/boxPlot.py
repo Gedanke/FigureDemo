@@ -1,11 +1,8 @@
 # -*- coding:utf-8 -*-
 
-import numpy
 import pandas
-import matplotlib as mpl
 import matplotlib.pyplot as plt
 import seaborn as sns
-import joypy
 
 # Import Data
 df = pandas.read_csv("../dataset/mpg_ggplot2.csv")
@@ -30,12 +27,14 @@ def add_n_obs(df, group_col, y):
     xticklabels = [x.get_text() for x in plt.gca().get_xticklabels()]
     n_obs = df.groupby(group_col)[y].size().values
     for (x, xticklabel), n_ob in zip(enumerate(xticklabels), n_obs):
-        plt.text(x,
-                 medians_dict[xticklabel] * 1.01,
-                 "#obs : " + str(n_ob),
-                 horizontalalignment='center',
-                 fontdict={'size': 12},
-                 color='black')
+        plt.text(
+            x,
+            medians_dict[xticklabel] * 1.01,
+            "#obs : " + str(n_ob),
+            horizontalalignment='center',
+            fontdict={'size': 12},
+            color='black'
+        )
 
 
 add_n_obs(df, group_col='class', y='hwy')

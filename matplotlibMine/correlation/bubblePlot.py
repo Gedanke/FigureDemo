@@ -21,14 +21,16 @@ colors = [
 fig = plt.figure(figsize=(10, 6), dpi=80, facecolor='w', edgecolor='k')
 
 for i, category in enumerate(categories):
-    plt.scatter('area',
-                'poptotal',
-                data=midwest.loc[midwest.category == category, :],
-                s='dot_size',
-                c=[colors[i]],
-                label=str(category),
-                edgecolors='black',
-                linewidths=.5)
+    plt.scatter(
+        'area',
+        'poptotal',
+        data=midwest.loc[midwest.category == category, :],
+        s='dot_size',
+        c=[colors[i]],
+        label=str(category),
+        edgecolors='black',
+        linewidths=.5
+    )
 
 
 # Step 3: Encircling
@@ -43,29 +45,37 @@ def encircle(x, y, ax=None, **kw):  # 定义encircle函数，圈出重点关注�
 
 # Select data to be encircled
 midwest_encircle_data1 = midwest.loc[midwest.state == 'IN', :]
-encircle(midwest_encircle_data1.area,
-         midwest_encircle_data1.poptotal,
-         ec="pink",
-         fc="#74C476",
-         alpha=0.3)
-encircle(midwest_encircle_data1.area,
-         midwest_encircle_data1.poptotal,
-         ec="g",
-         fc="none",
-         linewidth=1.5)
+encircle(
+    midwest_encircle_data1.area,
+    midwest_encircle_data1.poptotal,
+    ec="pink",
+    fc="#74C476",
+    alpha=0.3
+)
+encircle(
+    midwest_encircle_data1.area,
+    midwest_encircle_data1.poptotal,
+    ec="g",
+    fc="none",
+    linewidth=1.5
+)
 
 midwest_encircle_data6 = midwest.loc[midwest.state == 'WI', :]
-encircle(midwest_encircle_data6.area,
-         midwest_encircle_data6.poptotal,
-         ec="pink",
-         fc="black",
-         alpha=0.3)
-encircle(midwest_encircle_data6.area,
-         midwest_encircle_data6.poptotal,
-         ec="black",
-         fc="none",
-         linewidth=1.5,
-         linestyle='--')
+encircle(
+    midwest_encircle_data6.area,
+    midwest_encircle_data6.poptotal,
+    ec="pink",
+    fc="black",
+    alpha=0.3
+)
+encircle(
+    midwest_encircle_data6.area,
+    midwest_encircle_data6.poptotal,
+    ec="black",
+    fc="none",
+    linewidth=1.5,
+    linestyle='--'
+)
 
 # Step 4: Decorations
 plt.gca().set(

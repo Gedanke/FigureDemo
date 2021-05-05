@@ -2,17 +2,20 @@
 
 import pandas
 import numpy
-import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 # Import Data
 df = pandas.read_csv('../dataset/nightvisitors.csv')
 
 # Decide Colors
-mycolors = ['#dc2624', '#2b4750', '#45a0a2', '#e87a59', '#7dcaa9', '#649E7D', '#dc8018', '#C89F91']
+mycolors = [
+    '#dc2624', '#2b4750', '#45a0a2', '#e87a59', '#7dcaa9', '#649E7D', '#dc8018', '#C89F91'
+]
 
 # Draw Plot and Annotate
-fig, ax = plt.subplots(1, 1, figsize=(12, 8), dpi=80)
+fig, ax = plt.subplots(
+    1, 1, figsize=(12, 8), dpi=80
+)
 columns = df.columns[1:]
 labs = columns.values.tolist()
 

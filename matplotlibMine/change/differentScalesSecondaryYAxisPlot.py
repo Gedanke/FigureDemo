@@ -2,7 +2,6 @@
 
 import pandas
 import numpy
-import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 # Import Data
@@ -35,7 +34,8 @@ ax2.set_xticks(numpy.arange(0, len(x), 60))
 ax2.set_xticklabels(x[::60], rotation=90, fontdict={'fontsize': 10})
 ax2.set_title(
     "Personal Savings Rate vs Unemployed: Plotting in Secondary Y Axis",
-    fontsize=18)
+    fontsize=18
+)
 fig.tight_layout()
 plt.savefig("../photos/change/differentScalesSecondaryYAxisPlot.png")
 plt.show()

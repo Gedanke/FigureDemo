@@ -14,12 +14,14 @@ plt.plot(df['date'], df['value'], color='#dc2624')
 plt.ylim(50, 750)
 xtick_location = df.index.tolist()[::12]
 xtick_labels = [x[-4:] for x in df.date.tolist()[::12]]
-plt.xticks(ticks=xtick_location,
-           labels=xtick_labels,
-           rotation=0,
-           fontsize=12,
-           horizontalalignment='center',
-           alpha=.7)
+plt.xticks(
+    ticks=xtick_location,
+    labels=xtick_labels,
+    rotation=0,
+    fontsize=12,
+    horizontalalignment='center',
+    alpha=.7
+)
 plt.yticks(fontsize=12, alpha=.7)
 plt.title("Air Passengers Traffic (1949 - 1969)", fontsize=18)
 plt.grid(axis='both', alpha=.3)

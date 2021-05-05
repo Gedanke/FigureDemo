@@ -1,11 +1,8 @@
 # -*- coding:utf-8 -*-
 
-import numpy
 import pandas
-import matplotlib as mpl
 import matplotlib.pyplot as plt
 import seaborn as sns
-import joypy
 
 # Read data
 df = pandas.read_csv("../dataset/email_campaign_funnel.csv")
@@ -20,12 +17,14 @@ colors = [
 ]
 
 for c, group in zip(colors, df[group_col].unique()):
-    sns.barplot(x='Users',
-                y='Stage',
-                data=df.loc[df[group_col] == group, :],
-                order=order_of_bars,
-                color=c,
-                label=group)
+    sns.barplot(
+        x='Users',
+        y='Stage',
+        data=df.loc[df[group_col] == group, :],
+        order=order_of_bars,
+        color=c,
+        label=group
+    )
 
 # Decorations
 plt.xlabel("$Users$")

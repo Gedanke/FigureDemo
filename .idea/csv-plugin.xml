@@ -52,6 +52,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/matplotlibMine/dataset/iris.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/matplotlibMine/dataset/iris_test.csv">
           <value>
             <Attribute>
@@ -95,6 +102,13 @@
           </value>
         </entry>
         <entry key="/matplotlibMine/dataset/titanic.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/matplotlibMine/dataset/yahoo.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

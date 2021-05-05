@@ -1,11 +1,8 @@
 # -*- coding:utf-8 -*-
 
-import numpy
 import pandas
-import matplotlib as mpl
 import matplotlib.pyplot as plt
 import seaborn as sns
-import joypy
 
 # Import Data
 df = pandas.read_csv("../dataset/mpg_ggplot2.csv")
@@ -20,15 +17,19 @@ sns.boxplot(
     palette="Set1",
 )
 plt.legend(loc=9)
-sns.stripplot(x='class',
-              y='hwy',
-              data=df,
-              color='#dc2624',
-              size=5,
-              jitter=1)
+sns.stripplot(
+    x='class',
+    y='hwy',
+    data=df,
+    color='#dc2624',
+    size=5,
+    jitter=1
+)
 
 for i in range(len(df['class'].unique()) - 1):
-    plt.vlines(i + .5, 10, 45, linestyles='solid', colors='gray', alpha=0.2)
+    plt.vlines(
+        i + .5, 10, 45, linestyles='solid', colors='gray', alpha=0.2
+    )
 
 # Decoration
 plt.title('Box Plot of Highway Mileage by Vehicle Class', fontsize=18)

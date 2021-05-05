@@ -2,9 +2,7 @@
 
 import numpy
 import pandas
-import matplotlib as mpl
 import matplotlib.pyplot as plt
-import seaborn as sns
 
 # Import Data
 df = pandas.read_csv("../dataset/mpg_ggplot2.csv")
@@ -17,12 +15,16 @@ vals = [df[x_var].values.tolist() for i, df in df_agg]
 
 # Draw
 plt.figure(figsize=(10, 6), dpi=80)
-colors = [plt.cm.Set1(i / float(len(vals) - 1)) for i in range(len(vals))]
-n, bins, patches = plt.hist(vals,
-                            30,
-                            stacked=True,
-                            density=False,
-                            color=colors[:len(vals)])
+colors = [
+    plt.cm.Set1(i / float(len(vals) - 1)) for i in range(len(vals))
+]
+n, bins, patches = plt.hist(
+    vals,
+    30,
+    stacked=True,
+    density=False,
+    color=colors[:len(vals)]
+)
 
 # Decoration
 plt.legend({
@@ -30,8 +32,7 @@ plt.legend({
     for group, col in zip(
         numpy.unique(df[groupby_var]).tolist(), colors[:len(vals)])
 })
-plt.title(f"Stacked Histogram of ${x_var}$ colored by ${groupby_var}$",
-          fontsize=22)
+plt.title(f"Stacked Histogram of ${x_var}$ colored by ${groupby_var}$", fontsize=22)
 plt.xlabel(x_var)
 plt.ylabel("Frequency")
 # plt.ylim(0, 25)

@@ -2,7 +2,6 @@
 
 import pandas
 import numpy
-import matplotlib as mpl
 import matplotlib.pyplot as plt
 import statsmodels.tsa.stattools as stattools
 
@@ -29,8 +28,7 @@ plt.hlines(-conf_level, xmin=0, xmax=100, color='gray')
 plt.bar(x=numpy.arange(len(ccs)), height=ccs, width=.3)
 
 # Decoration
-plt.title('$Cross\; Correlation\; Plot:\; mdeaths\; vs\; fdeaths',
-          fontsize=18)
+plt.title('$Cross\; Correlation\; Plot:\; mdeaths\; vs\; fdeaths', fontsize=18)
 plt.xlim(0, len(ccs))
 plt.savefig("../photos/change/crossCorrelationPlot.png")
 plt.show()

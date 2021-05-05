@@ -1,18 +1,23 @@
 # -*- coding:utf-8 -*-
 
-import numpy
 import pandas
-
-numpy.random.seed(sum(map(ord, 'calmap')))
 import calmap
+import matplotlib.pyplot as plt
 
-events = pandas.read_csv('../dataset/AirPassengers.csv')
-calmap.calendarplot(events,
-                    monthticks=3,
-                    daylabels='MTWTFSS',
-                    dayticks=[0, 2, 4, 6],
-                    cmap='YlGn',
-                    fillcolor='grey',
-                    linewidth=0,
-                    fig_kws=dict(figsize=(8, 4)))
-# calendarHeatMapPlot
+df = pandas.read_csv("../dataset/yahoo.csv", parse_dates=['date'])
+df.set_index('date', inplace=True)
+# Plot
+plt.figure(figsize=(16, 10), dpi=80)
+calmap.calendarplot(
+    df.loc['2014']['VIX.Close'],
+    fig_kws={'figsize': (16, 10)},
+    yearlabel_kws={
+        'color': 'black',
+        'fontsize': 14
+    },
+    subplot_kws={
+        'title': 'Yahoo Stock Prices'
+    }
+)
+plt.savefig("../photos/change/calendarHeatMapPlot.png")
+plt.show()

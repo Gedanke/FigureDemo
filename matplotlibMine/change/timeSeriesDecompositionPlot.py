@@ -1,8 +1,6 @@
 # -*- coding:utf-8 -*-
 
 import pandas
-import numpy
-import matplotlib as mpl
 import matplotlib.pyplot as plt
 from statsmodels.tsa.seasonal import seasonal_decompose
 from dateutil.parser import parse

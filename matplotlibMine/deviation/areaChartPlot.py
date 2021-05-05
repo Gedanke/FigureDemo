@@ -2,9 +2,7 @@
 
 import numpy
 import pandas
-import matplotlib as mpl
 import matplotlib.pyplot as plt
-import seaborn as sns
 
 # Prepare Data
 df = pandas.read_csv("../dataset/economics.csv", parse_dates=['date']).head(100)
@@ -13,29 +11,35 @@ y_returns = (df.psavert.diff().fillna(0) / df.psavert.shift(1)).fillna(0) * 100
 
 # Plot使用plt.fill_between
 plt.figure(figsize=(10, 8), dpi=80)
-plt.fill_between(x[1:],
-                 y_returns[1:],
-                 0,
-                 where=y_returns[1:] >= 0,
-                 facecolor='green',
-                 interpolate=True,
-                 alpha=0.7)
-plt.fill_between(x[1:],
-                 y_returns[1:],
-                 0,
-                 where=y_returns[1:] <= 0,
-                 facecolor='red',
-                 interpolate=True,
-                 alpha=0.7)
+plt.fill_between(
+    x[1:],
+    y_returns[1:],
+    0,
+    where=y_returns[1:] >= 0,
+    facecolor='green',
+    interpolate=True,
+    alpha=0.7
+)
+plt.fill_between(
+    x[1:],
+    y_returns[1:],
+    0,
+    where=y_returns[1:] <= 0,
+    facecolor='red',
+    interpolate=True,
+    alpha=0.7
+)
 
 # Annotate
-plt.annotate('Peak \n1975',
-             xy=(94.0, 21.0),
-             xytext=(88.0, 28),
-             bbox=dict(boxstyle='square', fc='firebrick'),
-             arrowprops=dict(facecolor='steelblue', shrink=0.05),
-             fontsize=12,
-             color='white')
+plt.annotate(
+    'Peak \n1975',
+    xy=(94.0, 21.0),
+    xytext=(88.0, 28),
+    bbox=dict(boxstyle='square', fc='firebrick'),
+    arrowprops=dict(facecolor='steelblue', shrink=0.05),
+    fontsize=12,
+    color='white'
+)
 
 # Decorations
 xtickvals = [
@@ -43,13 +47,15 @@ xtickvals = [
     for y, m in zip(df.date.dt.year, df.date.dt.month_name())
 ]
 plt.gca().set_xticks(x[::6])
-plt.gca().set_xticklabels(xtickvals[::6],
-                          rotation=90,
-                          fontdict={
-                              'horizontalalignment': 'center',
-                              'verticalalignment': 'center_baseline',
-                              'size': 12
-                          })
+plt.gca().set_xticklabels(
+    xtickvals[::6],
+    rotation=90,
+    fontdict={
+        'horizontalalignment': 'center',
+        'verticalalignment': 'center_baseline',
+        'size': 12
+    }
+)
 plt.ylim(-20, 32)
 plt.xlim(1, 100)
 plt.yticks(fontsize=12)

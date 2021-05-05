@@ -20,15 +20,17 @@ ax_right = fig.add_subplot(grid[:-1, -1], xticklabels=[], yticklabels=[])
 ax_bottom = fig.add_subplot(grid[-1, 0:-1], xticklabels=[], yticklabels=[])
 
 # Scatterplot on main ax
-ax_main.scatter('displ',
-                'hwy',
-                s=df.cty * 5,
-                c=df.manufacturer.astype('category').cat.codes,
-                alpha=.9,
-                data=df,
-                cmap="Set1",
-                edgecolors='black',
-                linewidths=.5)
+ax_main.scatter(
+    'displ',
+    'hwy',
+    s=df.cty * 5,
+    c=df.manufacturer.astype('category').cat.codes,
+    alpha=.9,
+    data=df,
+    cmap="Set1",
+    edgecolors='black',
+    linewidths=.5
+)
 
 # Add a graph in each part
 sns.boxplot(df.hwy, ax=ax_right, orient="v", linewidth=1, palette='Set1')
@@ -40,9 +42,11 @@ ax_bottom.set(xlabel='')
 ax_right.set(ylabel='')
 
 # Main Title, Xlabel and YLabel
-ax_main.set(title='Scatterplot with Histograms \n displ vs hwy',
-            xlabel='displ',
-            ylabel='hwy')
+ax_main.set(
+    title='Scatterplot with Histograms \n displ vs hwy',
+    xlabel='displ',
+    ylabel='hwy'
+)
 
 # Set font size of different components
 ax_main.title.set_fontsize(12)

@@ -19,7 +19,8 @@ gridobj = sns.lmplot(
     height=7,
     aspect=1.6,  # robust=True,
     palette='Set1',
-    scatter_kws=dict(s=60, linewidths=.7, edgecolors='black'))
+    scatter_kws=dict(s=60, linewidths=.7, edgecolors='black')
+)
 
 # Decorations
 sns.set(style="whitegrid", font_scale=1.5)

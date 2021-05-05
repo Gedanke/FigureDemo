@@ -1,8 +1,6 @@
 # -*- coding:utf-8 -*-
 
 import pandas
-import numpy
-import matplotlib as mpl
 import matplotlib.pyplot as plt
 from pandas.plotting import andrews_curves
 

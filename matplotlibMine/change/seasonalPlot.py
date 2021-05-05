@@ -1,8 +1,6 @@
 # -*- coding:utf-8 -*-
 
 import pandas
-import numpy
-import matplotlib as mpl
 import matplotlib.pyplot as plt
 from dateutil.parser import parse
 
@@ -10,8 +8,12 @@ from dateutil.parser import parse
 df = pandas.read_csv('../dataset/AirPassengers.csv')
 
 # Prepare data
-df['year'] = [parse(d).year for d in df.date]
-df['month'] = [parse(d).strftime('%b') for d in df.date]
+df['year'] = [
+    parse(d).year for d in df.date
+]
+df['month'] = [
+    parse(d).strftime('%b') for d in df.date
+]
 years = df['year'].unique()
 
 # Draw Plot
@@ -23,16 +25,20 @@ mycolors = [
 plt.figure(figsize=(10, 6), dpi=80)
 
 for i, y in enumerate(years):
-    plt.plot('month',
-             'value',
-             data=df.loc[df.year == y, :],
-             color=mycolors[i],
-             label=y)
-    plt.text(df.loc[df.year == y, :].shape[0] - .9,
-             df.loc[df.year == y, 'value'][-1:].values[0],
-             y,
-             fontsize=12,
-             color=mycolors[i])
+    plt.plot(
+        'month',
+        'value',
+        data=df.loc[df.year == y, :],
+        color=mycolors[i],
+        label=y
+    )
+    plt.text(
+        df.loc[df.year == y, :].shape[0] - .9,
+        df.loc[df.year == y, 'value'][-1:].values[0],
+        y,
+        fontsize=12,
+        color=mycolors[i]
+    )
 
 # Decoration
 plt.ylim(50, 750)
@@ -40,8 +46,7 @@ plt.xlim(-0.3, 11)
 plt.ylabel('$Air Traffic')
 plt.yticks(fontsize=11, alpha=.7)
 plt.xticks(fontsize=11, alpha=.7)
-plt.title("Monthly Seasonal Plot: Air Passengers Traffic (1949 - 1969)",
-          fontsize=16)
+plt.title("Monthly Seasonal Plot: Air Passengers Traffic (1949 - 1969)", fontsize=16)
 plt.grid(axis='y', alpha=.3)
 
 # Remove borders

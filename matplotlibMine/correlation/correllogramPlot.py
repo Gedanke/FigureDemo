@@ -19,5 +19,6 @@ sns.heatmap(
         'color': '#253D24'
     },
 )
+
 plt.savefig("../photos/correlation/correllogramPlot.png")
 plt.show()

@@ -10,11 +10,13 @@ df = pandas.read_csv("../dataset/mpg_ggplot2.csv")
 df_counts = df.groupby(['hwy', 'cty']).size().reset_index(name='counts')
 # Draw Stripplot
 fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
-sns.stripplot(df_counts.cty,
-              df_counts.hwy,
-              size=10,
-              ax=ax,
-              palette='Set1')
+sns.stripplot(
+    df_counts.cty,
+    df_counts.hwy,
+    size=10,
+    ax=ax,
+    palette='Set1'
+)
 
 # Decorations
 sns.set(style="whitegrid", font_scale=1.1)

@@ -1,16 +1,15 @@
 # -*- coding:utf-8 -*-
 
-import numpy
 import pandas
-import matplotlib as mpl
 import matplotlib.pyplot as plt
-import seaborn as sns
 
 # Prepare Data
 df = pandas.read_csv("../dataset/mtcars.csv")
 x = df.loc[:, ['mpg']]
 df['mpg_z'] = (x - x.mean()) / x.std()
-df['colors'] = ['red' if x < 0 else 'darkgreen' for x in df['mpg_z']]
+df['colors'] = [
+    'red' if x < 0 else 'darkgreen' for x in df['mpg_z']
+]
 df.sort_values('mpg_z', inplace=True)
 df.reset_index(inplace=True)
 
@@ -18,12 +17,16 @@ df.reset_index(inplace=True)
 plt.figure(figsize=(12, 10), dpi=80)
 plt.scatter(df.mpg_z, df.index, s=250, alpha=.6, color=df.colors)
 for x, y, tex in zip(df.mpg_z, df.index, df.mpg_z):
-    t = plt.text(x,
-                 y,
-                 round(tex, 1),
-                 horizontalalignment='center',
-                 verticalalignment='center',
-                 fontdict={'color': 'black', 'size': '10'})
+    t = plt.text(
+        x,
+        y,
+        round(tex, 1),
+        horizontalalignment='center',
+        verticalalignment='center',
+        fontdict={
+            'color': 'black', 'size': '10'
+        }
+    )
 
 # Decorations
 # Lighten borders
